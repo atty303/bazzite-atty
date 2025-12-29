@@ -23,6 +23,7 @@ modules:
         - principis/howdy
     install:
       packages:
+        - python3.13
         - https://kojipkgs.fedoraproject.org//packages/dlib/19.24.8/3.fc43/x86_64/dlib-19.24.8-3.fc43.x86_64.rpm
         - https://kojipkgs.fedoraproject.org//packages/dlib/19.24.8/3.fc43/x86_64/dlib-devel-19.24.8-3.fc43.x86_64.rpm
         - https://kojipkgs.fedoraproject.org//packages/dlib/19.24.8/3.fc43/x86_64/python3-dlib-19.24.8-3.fc43.x86_64.rpm
