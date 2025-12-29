@@ -17,9 +17,11 @@ modules:
       - 1password
 
   - type: dnf
-    repos:
-      copr:
-        - principis/howdy
+    install:
+      packages:
+        - repo: copr:copr.fedorainfracloud.org:principis:howdy
+          packages:
+            - howdy
 
   - type: files
     files:
