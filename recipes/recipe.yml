@@ -27,6 +27,11 @@ modules:
       packages:
         - howdy
 
+  - type: script
+    scripts:
+      # TODO: erased on boot?
+      - authselect-profile.sh
+
   - type: files
     files:
       - source: system

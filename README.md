@@ -5,6 +5,69 @@ This is my personal Bazzite image for my personal use.
 - 1Password: Flatpak/AppImage doesn't support browser, CLI and system authentication integrations.
 - Howdy: It is a PAM module. So it needs to be installed to the system.
 
+## Configuration
+
+### Howdy
+
+Set the device path for the IR camera.
+
+```bash
+sudo howdy set device_path /dev/video2
+```
+
+Test and confirm that a monochrome image is displayed.
+
+```bash
+sudo howdy test
+```
+
+Scan and register your face. It is recommended to run this several times from different angles to register multiple models.
+
+```bash
+sudo howdy add
+```
+
+Test again to confirm that your face is recognized.
+
+```bash
+sudo howdy test
+```
+
+Check the current state of authselect.
+
+```bash
+$ authselect current
+Profile ID: local
+Enabled features:
+- with-silent-lastlog
+- with-mdns4
+```
+
+Create a new profile based on the currently selected profile.
+
+```bash
+sudo authselect create-profile local -b local
+```
+
+Add `pam_howdy.so` before the line with `pam_fprintd.so` in `system-auth`.
+
+```
+# /etc/authselect/custom/local/system-auth
+auth sufficient pam_howdy.so
+```
+
+Switch to and apply the created profile.
+
+```bash
+sudo authselect select custom/local with-silent-lastlog with-mdns4
+```
+
+Test polkit authentication to confirm that face recognition works.
+
+```bash
+pkexec id
+```
+
 ## Installation
 
 > [!WARNING]  
@@ -54,6 +117,15 @@ mise run build
 ```
 
 This will template out the file and build with `docker`, `podman`, or `buildah`.
+
+
+### Inspect Image
+
+```nushell
+let mnt = (podman unshare podman image mount localhost/bazzite-atty)
+podman unshare yazi $mnt
+podman unshare umount $mnt
+```
 
 ### Switch
 
