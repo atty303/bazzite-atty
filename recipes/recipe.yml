@@ -20,12 +20,23 @@ modules:
   - type: dnf
     repos:
       cleanup: true
+      copr:
+        - solopasha/hyprland
+        - avengemedia/dms
       files:
-        add:
-          - https://raw.githubusercontent.com/atty303/howdy-rpm/refs/heads/main/howdy.repo
+        - https://raw.githubusercontent.com/atty303/howdy-rpm/refs/heads/main/howdy.repo
     install:
       packages:
+        - greetd
+        - greetd-selinux
+        # howdy-rpm
         - howdy
+        # solopasha/hyprland
+        - uwsm
+        # avengemedia/dms
+        - niri
+        - dms
+        - dms-greeter
 
   - type: script
     scripts:
@@ -36,6 +47,13 @@ modules:
     files:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+
+  - type: systemd
+    system:
+      disabled:
+        - sddm.service
+      enabled:
+        - greetd.service
 
   - type: default-flatpaks
     configurations:

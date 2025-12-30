@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=niri (uwsm)
+Comment=niri via uwsm
+Exec=uwsm start -N "Niri" -D niri -C "Niri" -- niri
+TryExec=uwsm
+DesktopNames=niri
+Type=Application

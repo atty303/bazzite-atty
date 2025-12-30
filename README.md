@@ -60,6 +60,7 @@ Switch to and apply the created profile.
 
 ```bash
 sudo authselect select custom/local with-silent-lastlog with-mdns4
+sudo authselect apply-changes
 ```
 
 Test polkit authentication to confirm that face recognition works.
