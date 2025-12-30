@@ -10,14 +10,6 @@ description: This is my personal OS image.
 base-image: ghcr.io/ublue-os/bazzite-nvidia-open
 image-version: stable
 
-stages:
-  - name: howdy
-    from: fedora:43
-    modules:
-      - type: script
-        scripts:
-          - howdy.sh
-
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
@@ -25,14 +17,15 @@ modules:
     install:
       - 1password
 
-  - type: containerfile
-    snippets:
-      - RUN mkdir -p /tmp/howdy
-      - COPY --from=howdy /root/rpmbuild/RPMS/noarch/*.rpm /tmp/howdy
-      - COPY --from=howdy /root/rpmbuild/RPMS/x86_64/*.rpm /tmp/howdy
-      - RUN ls -l /tmp/howdy
-      - RUN dnf install -y /tmp/howdy/*
-      - RUN rm -rf /tmp/howdy
+  - type: dnf
+    repos:
+      cleanup: true
+      files:
+        add:
+          - https://raw.githubusercontent.com/atty303/howdy-rpm/refs/heads/main/howdy.repo
+    install:
+      packages:
+        - howdy
 
   - type: files
     files:
