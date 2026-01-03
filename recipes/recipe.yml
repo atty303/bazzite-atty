@@ -22,6 +22,7 @@ modules:
         - solopasha/hyprland
         - avengemedia/dms
         - scrollwm/packages
+        - erikreider/SwayNotificationCenter
       files:
         - https://raw.githubusercontent.com/atty303/howdy-rpm/refs/heads/main/howdy.repo
     install:
@@ -35,6 +36,8 @@ modules:
         - uwsm
         # scrollwm/packages
         - scroll
+        # erikreider/SwayNotificationCenter
+        - SwayNotificationCenter
         # avengemedia/dms
         - niri
         - dms
