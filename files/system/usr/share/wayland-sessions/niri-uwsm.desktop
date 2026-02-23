@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=niri (uwsm)
-Comment=A scrollable-tiling Wayland compositor
-GenericName=Wayland Compositor
-Exec=uwsm start -N niri-uwsm -D niri -C niri -- niri --session
-TryExec=uwsm
-Type=Application
-DesktopNames=niri-uwsm;wlroots
