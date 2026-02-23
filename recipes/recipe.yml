@@ -46,11 +46,6 @@ modules:
         # scottames/ghostty
         - ghostty
 
-  - type: files
-    files:
-      - source: system
-        destination: /
-
 #  - type: script
 #    snippets:
       # Activate DMS for Wayland sessions
