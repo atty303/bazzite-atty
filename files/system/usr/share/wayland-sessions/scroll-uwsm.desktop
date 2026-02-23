@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=scroll (uwsm)
-Comment=An i3-compatible Wayland compositor (sway) with a PaperWM layout
-GenericName=Wayland Compositor
-Exec=uwsm start -N scroll-uwsm -D scroll -C scroll -- scroll
-TryExec=uwsm
-Type=Application
-DesktopNames=scroll-uwsm;wlroots
