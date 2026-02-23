@@ -28,8 +28,8 @@ modules:
         - https://raw.githubusercontent.com/atty303/howdy-rpm/refs/heads/main/howdy.repo
     install:
       packages:
-        - greetd
-        - greetd-selinux
+#        - greetd
+#        - greetd-selinux
         # howdy-rpm
         - howdy
         - howdy-selinux
