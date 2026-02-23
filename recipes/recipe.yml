@@ -20,6 +20,7 @@ modules:
       cleanup: true
       copr:
         - solopasha/hyprland
+        - scottames/ghostty
 #        - avengemedia/dms
 #        - scrollwm/packages
 #        - erikreider/SwayNotificationCenter
@@ -42,6 +43,7 @@ modules:
 #        - niri
 #        - dms
 #        - dms-greeter
+        # scottames/ghostty
         - ghostty
 
   - type: files
