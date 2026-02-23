@@ -20,9 +20,9 @@ modules:
       cleanup: true
       copr:
         - solopasha/hyprland
-        - avengemedia/dms
-        - scrollwm/packages
-        - erikreider/SwayNotificationCenter
+#        - avengemedia/dms
+#        - scrollwm/packages
+#        - erikreider/SwayNotificationCenter
       files:
         - https://raw.githubusercontent.com/atty303/howdy-rpm/refs/heads/main/howdy.repo
     install:
@@ -35,13 +35,13 @@ modules:
         # solopasha/hyprland
         - uwsm
         # scrollwm/packages
-        - scroll
+#        - scroll
         # erikreider/SwayNotificationCenter
-        - SwayNotificationCenter
+#        - SwayNotificationCenter
         # avengemedia/dms
-        - niri
-        - dms
-        - dms-greeter
+#        - niri
+#        - dms
+#        - dms-greeter
         - ghostty
 
   - type: files
