@@ -19,7 +19,8 @@ modules:
     repos:
       cleanup: true
       copr:
-        - solopasha/hyprland
+#        - solopasha/hyprland
+        - basilcrow/uwsm
         - scottames/ghostty
 #        - avengemedia/dms
 #        - scrollwm/packages
