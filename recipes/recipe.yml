@@ -11,6 +11,16 @@ base-image: ghcr.io/ublue-os/bazzite-nvidia-open
 image-version: stable
 
 modules:
+  - type: containerfile
+    no-cache: false
+    snippets:
+      - COPY --from=ghcr.io/ublue-os/akmods:main-44 / /tmp/akmods-common
+      - COPY --from=ghcr.io/ublue-os/akmods-extra:ogc-44 / /tmp/akmods-common
+      - RUN find /tmp/akmods-common
+      - RUN dnf install /tmp/akmods-common/rpms/ublue-os/ublue-os-akmods*.rpm
+      - RUN dnf install -y /tmp/akmods-common/rpms/kmods/kmod-openrazer*.rpm /tmp/akmods-common/rpms/common/openrazer-kmod*.rpm
+      - RUN dnf install -y /tmp/akmods-common/rpms/kmods/kmod-new-lg4ff*.rpm
+
   - type: bling
     install:
       - 1password
