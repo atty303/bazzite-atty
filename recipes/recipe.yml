@@ -44,8 +44,4 @@ modules:
         # scottames/ghostty
         - ghostty
 
-  - type: default-flatpaks
-    configurations:
-      - scope: user
-
   - type: signing
